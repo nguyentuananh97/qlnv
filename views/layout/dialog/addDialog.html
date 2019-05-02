@@ -1,0 +1,87 @@
+<style type="text/css">
+   div[layout-gt-xs="column"] input{
+   width: 500px !important;
+   }
+   table.md-calendar-day-header{
+   width: unset;
+   }
+   md-datepicker .md-datepicker-triangle-button{
+   bottom: 10px;
+   }
+</style>
+<h5>Nhân viên</h5>
+<md-content layout-padding>
+   <div>
+      <form name="userForm" novalidate ng-submit="userForm.$valid && updateUser()">
+         <div layout-gt-xs="column">
+            <md-input-container>
+               <label>Mã nhân viên *</label>
+               <input ng-disabled="user.id !== null" type="text" name="code" ng-model="user.code" required>
+               <div ng-messages="userForm.code.$error">
+                  <div ng-message="required">
+                     Không được trống trường này
+                  </div>
+               </div>
+            </md-input-container>
+            <md-input-container>
+               <label>Họ và tên *</label>
+               <input type="text" name="name" ng-model="user.name" minlength="6" required>
+               <div ng-messages="userForm.name.$error">
+               	  <div ng-message="required">
+                     Không được trống trường này
+                  </div>
+                  <div ng-message="minlength">Tên phải trên 6 kí tự</div>
+               </div>
+            </md-input-container>
+            <md-input-container>
+               <label>Email*</label>
+               <input type="email" name="email" ng-model="user.email" required>
+               <div ng-messages="userForm.email.$error">
+               	  <div ng-message="required">
+                     Không được trống trường này
+                  </div>
+                  <div ng-message="userForm.email.$invalid">
+                    	Không đúng định dạng email
+                  </div>
+               </div>
+            </md-input-container>
+            <md-input-container>
+               <label>Mật khẩu*</label>
+               <input type="password" name="password" ng-model="user.password" required>
+               <div ng-messages="userForm.code.$error">
+                  <div ng-message="required">
+                     Không được trống trường này
+                  </div>
+               </div>
+            </md-input-container>
+            <md-input-container class="md-block">
+               <label>Vị trí</label>
+               <md-select ng-model="user.role_id" class="md-no-underline">
+                  <md-option ng-repeat="r in roles" ng-bind="r.type" ng-value="r.id"></md-option>
+               </md-select>
+            </md-input-container>
+            <md-input-container>
+               <label>Số điện thoại</label>
+               <input type="text" name="phone" ng-model="user.phone_number">
+            </md-input-container>
+            <md-input-container>
+               <label>Địa chỉ</label>
+               <input type="text" name="address" ng-model="user.address">
+            </md-input-container>
+         </div>
+         <div layout-gt-xs="row">
+            <md-input-container class="md-block">
+               <label>Ngày sinh</label>
+               <md-datepicker ng-model="user.dob"></md-datepicker>
+            </md-input-container>
+            <md-input-container class="md-block">
+               <label>Ngày tham gia</label>
+               <md-datepicker ng-model="user.joined_date"></md-datepicker>
+            </md-input-container>
+         </div>
+         <md-input-container class="md-block">
+            <md-button type="submit" style="background: linear-gradient(45deg, #0288d1 0%, #26c6da 100%)" md-no-ink class="md-raised md-primary right">Lưu</md-button>
+         </md-input-container>
+      </form>
+   </div>
+</md-content>

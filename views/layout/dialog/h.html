@@ -1,0 +1,70 @@
+<style type="text/css">
+	md-dialog{
+		padding: 10px;
+	}
+</style>
+	<h5>Thêm nhân viên</h5>
+	<form class="formValidate"enctype="multipart/form-data">
+    <div class="row">
+    	<div class="input-field">
+        	<label for="idnv">Mã nhân viên*</label>
+        	<input id="idnv" name="idnv" type="text" data-error=".errorTxt1" aria-required="true" class="error" aria-describedby="idnv-error" ng-model="user.code">
+        	<div class="errorTxt1"></div>
+      	</div>
+      	<div class="input-field">
+        	<label for="uname">Họ và tên*</label>
+        	<input id="uname" name="uname" type="text" data-error=".errorTxt2" aria-required="true" class="error" aria-describedby="uname-error" ng-model="user.name">
+        	<div class="errorTxt2"></div>
+      	</div>
+      	<div class="input-field">
+        	<label for="cemail">E-Mail *</label>
+        	<input id="cemail" type="email" name="cemail" data-error=".errorTxt3" aria-required="true" class="error" aria-describedby="cemail-error" ng-model="user.email">
+        	<div class="errorTxt3"></div>
+      	</div>
+      	<div class="input-field">
+        	<label for="password">Mật khẩu *</label>
+        	<input id="password" type="password" name="password" data-error=".errorTxt4" aria-required="true" class="error" aria-describedby="password-error" ng-model="user.password">
+        	<div class="errorTxt4"></div>
+      	</div>
+      	<div class="input-field">
+        	<label for="cpassword" class="active">Xác nhận mật khẩu *</label>
+        	<input id="cpassword" type="password" name="cpassword" data-error=".errorTxt5" aria-required="true" aria-invalid="true" class="error" aria-describedby="cpassword-error">
+        	<div class="errorTxt5"></div>
+      	</div>
+      	<div class="input-field">
+        	<label for="crole">Vị trí *</label>
+        	<select class="error browser-default " id="crole" name="crole" data-error=".errorTxt6" aria-required="true" aria-describedby="crole-error"  ng-model="user.position">
+          		<option value="" disabled="" selected="">Chọn vị trí</option>
+        	</select>
+        	
+      	</div>
+      	<div class="input-field">
+        	<label for="cphone" class="active">Số điện thoại</label>
+        	<input id="cphone" type="text" name="cphone"  aria-required="true" aria-invalid="true" class="error" aria-describedby="cphone-error" ng-model="user.phone">
+        	
+      	</div>
+      	<div class="input-field">
+        	<label for="caddress" class="active">Địa chỉ</label>
+        	<input id="caddress" type="text" name="caddress" aria-required="true" aria-invalid="true" class="error" aria-describedby="caddress-error" ng-model="user.address">
+        	
+      	</div>
+      	<div class="input-field">
+        	<label for="cdob">Ngày sinh</label>
+        	<input id="cdob" name="cdob" type="text"  aria-required="true" class="error" aria-describedby="cdob-error" ng-model="user.dob">
+      	</div>
+      	<div class="input-field">
+        	<label for="cjoin">Ngày tham gia</label>
+        	<input id="cjoin" name="cjoin" type="text"  aria-required="true" class="error" aria-describedby="cjoin-error" ng-model="user.join">
+      	</div>
+      	<div class="input-field">
+        	<input id="cavata" type="file" name="cavata" id="input-file-now" class="dropify" ng-model="user.avata">
+      	</div>
+      	<div class="input-field">
+        	<button class="btn waves-effect waves-light right submit" type="submit" name="submit" ng-click="addEmployee()">Xác nhận
+          		<i class="material-icons right">send</i>
+        	</button>
+      	</div>
+    </div>
+    
+</form>
+
